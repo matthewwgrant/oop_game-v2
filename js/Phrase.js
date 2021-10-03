@@ -22,9 +22,9 @@ class Phrase {
 		}
 	}
 
-	// checkLetter() {
+	checkLetter() {
 
-	// }
+	}
 
 	// showMatchedLetter() {
 
