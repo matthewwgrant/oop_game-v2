@@ -11,13 +11,22 @@ class Game {
 	 */
 	createPhrase() {
 		const phraseArr = [
-			`they cannot stop you from ordering a steak and a glass of water`,
-			`mo salah running down the wing`,
-			`better safe than sorrry`,
-			`hot dog we have a weiner`,
-			`a fifth phrase that is not clever`
+			{phrase: 'they cannot stop you from ordering a steak and a glass of water'},
+			{phrase: 'mo salah running down the wing'},
+			{phrase: 'better safe than sorrry'},
+			{phrase: 'hot dog we have a weiner'},
+			{phrase: 'a fifth phrase that is not clever'}
 		];
+
 		return phraseArr;
+	}
+
+	/**
+	 * Selects random phrase from phrases property
+	 * @return {Object} Phrase object chosen to be used
+	 */
+	getRandomPhrase() {
+		return this.createPhrase()[Math.floor(Math.random() * this.phrases.length)];
 	}
 	
 }
