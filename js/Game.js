@@ -29,4 +29,18 @@ class Game {
 		return this.createPhrase()[Math.floor(Math.random() * this.phrases.length)];
 	}
 	
+	/**
+	 * Begins game by selecting a random phrase and displaying it to user
+	 */
+
+	 startGame() {
+	 	const overlay = document.querySelector('#overlay');
+	 	overlay.style.display = 'none';
+	 	const newPhrase = new Phrase(this.getRandomPhrase());
+	 	
+	 	newPhrase.addPhraseToDisplay();
+	 	this.activePhrase = newPhrase;
+	 	
+	 }
+
 }

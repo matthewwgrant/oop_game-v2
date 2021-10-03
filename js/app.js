@@ -7,10 +7,10 @@
  // };
 
 const game = new Game();
-const randomPhrase = game.getRandomPhrase();
-const phrase = new Phrase(randomPhrase.phrase);
+game.startGame();
+// const phrase = new Phrase(randomPhrase.phrase);
 // game.phrases.forEach((phrase, index) => {
 // 	console.log(`Phrase  ${index} - phrase: ${phrase.phrase}`);
 // });
 
-phrase.addPhraseToDisplay();
+// phrase.addPhraseToDisplay();

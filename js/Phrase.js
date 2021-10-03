@@ -14,10 +14,10 @@ class Phrase {
 			const regex = /^[a-z]/;
 			if (  regex.test(letters[i]) ) {
 				const addLetter = `<li class="hide letter ${letters[i]}">${letters[i]}</li>`
-				ul.append(addLetter);
+				ul.insertAdjacentHTML('beforeend', addLetter);
 			} else {
 				const addSpace = `<li class="space"> </li>`;
-				ul.append(addSpace);
+				ul.insertAdjacentHTML('beforeend', addSpace);
 			}
 		}
 	}
