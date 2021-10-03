@@ -1,16 +1,9 @@
-/* Treehouse FSJS Techdegree
- * Project 4 - OOP Game App
- * app.js */
+// event listener to start game
 
- // const logPhrase = (phrase) => {
- // 	console.log(`Phrase - phrase: `, phrase.phrase);
- // };
+let game;
+const startButton = document.querySelector('#btn__reset');
 
-const game = new Game();
-game.startGame();
-// const phrase = new Phrase(randomPhrase.phrase);
-// game.phrases.forEach((phrase, index) => {
-// 	console.log(`Phrase  ${index} - phrase: ${phrase.phrase}`);
-// });
-
-// phrase.addPhraseToDisplay();
+startButton.addEventListener('click', () => {
+	game = new Game();
+	game.startGame();
+});
