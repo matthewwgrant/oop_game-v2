@@ -46,7 +46,7 @@ class Game {
 		if (this.activePhrase.checkLetter(guess) === true ) {
 			this.activePhrase.showMatchedLetter(guess);
 			this.checkForWin();
-			if (this.checkForWin === true) {
+			if (this.checkForWin() === true) {
 				this.gameOver(true);
 			}
 		} else {
