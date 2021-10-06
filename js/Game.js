@@ -58,14 +58,11 @@ class Game {
 		}
 
 		if ( hidden.length === 0 ) {
-			console.log(hidden.length);
-			console.log(showing.length);
 			return true;
 		} else {
-			console.log(hidden.length);
-			console.log(showing.length);
 			return false;
 		}
+
 	}
 
 	/**
@@ -84,7 +81,7 @@ class Game {
 		}
 
 		if (this.missed === 5) {
-			this.gameOver(false);
+			this.gameOver(true);
 		}
 	}
 
@@ -92,15 +89,20 @@ class Game {
 	 * Displays game over message
 	 * @param {boolean} gameWon - Whether the user won the game
 	 */
-	gameOver() {
+	gameOver(gameWon) {
+		const overlay = document.querySelector('#overlay');
+		const h1 = document.querySelector('#game-over-message');
+
 		if (this.checkForWin() === true) {
-			const overlay = document.querySelector('#overlay');
 			overlay.className = 'win';
 	 		overlay.style.display = 'block';
+	 		h1.textContent = 'You won!';
+	 		this.activePhrase = null;
 		} else {
-			const overlay = document.querySelector('#overlay');
 			overlay.className = 'lose';
 		 	overlay.style.display = 'block';
+		 	h1.textContent = 'Sorry, better luck next time!';
+		 	this.activePhrase = null;
 	 	}
 	}
 }
