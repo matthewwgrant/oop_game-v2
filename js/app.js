@@ -1,8 +1,8 @@
-// // variables
+// variables
 let game;
-// // let guess;
+let guess;
 const startButton = document.querySelector('#btn__reset');
-// // const keyboard = document.querySelector('#qwerty');
+const keyboard = document.querySelector('#qwerty');
 
 // event listener to start game
 startButton.addEventListener('click', () => {
@@ -11,17 +11,11 @@ startButton.addEventListener('click', () => {
 });
 
 
-
-// game.activePhrase.showMatchedLetter('a');
-
-
-
-
 // event listener to capture keystroke value
-// keyboard.addEventListener('click', (e) => {
-// 	if (e.target && e.target.type === 'submit') {
-// 		guess = e.target.textContent;
-// 		console.log(guess);
-// 	}
-// });
+keyboard.addEventListener('click', (e) => {
+	if (e.target && e.target.type === 'submit') {
+		guess = e.target.textContent;
+		game.handleInteraction();
+	}
+});
 
