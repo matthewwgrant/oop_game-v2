@@ -14,7 +14,7 @@ class Phrase {
 		for ( let i = 0; i < letters.length; i++ ) {
 			const regex = /^[a-z]/;
 			if (  regex.test(letters[i]) ) {
-				const addLetter = `<li class="show letter ${letters[i]}">${letters[i]}</li>`
+				const addLetter = `<li class="hide letter ${letters[i]}">${letters[i]}</li>`
 				ul.insertAdjacentHTML('beforeend', addLetter);
 			} else {
 				const addSpace = `<li class="space"> </li>`;
@@ -30,7 +30,9 @@ class Phrase {
 	checkLetter(letter) {
 		const board = game.activePhrase.phrase.split('');
 		if ( board.indexOf(letter) !== -1 ) {
-			console.log(board.indexOf(letter));
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -38,7 +40,12 @@ class Phrase {
 	 * Displays passed letter on screen after match is found
 	 * @param (string) letter - Letter to display
 	 */
-	// showMatchedLetter(letter) {
-
-	// }
+	showMatchedLetter(letter) {
+		const showLetter = document.querySelectorAll('#phrase ul li');
+		for ( let i = 0; i < showLetter.length; i++ ) {
+			if ( showLetter[i].textContent === letter ) {
+				showLetter[i].className = `show letter ${showLetter[i]}`
+			}
+		}
+	}
 }

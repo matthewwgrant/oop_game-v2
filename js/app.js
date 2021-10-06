@@ -10,6 +10,16 @@ startButton.addEventListener('click', () => {
 	game.startGame();
 });
 
+// const showLetter = document.querySelectorAll('#phrase ul li');
+// function showMatchedLetter(letter) {
+// 	for ( let i = 0; i < showLetter.length; i++ ) {
+// 		if ( showLetter.textContent === letter ) {
+// 			console.log(showLetter[])
+// 		}
+// 	}
+// }
+
+// game.activePhrase.showMatchedLetter('a');
 
 
 
