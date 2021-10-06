@@ -34,12 +34,73 @@ class Game {
 	 * Begins game by selecting a random phrase and displaying it to user
 	 */
 
-	 startGame() {
+	startGame() {
 	 	const overlay = document.querySelector('#overlay');
 	 	overlay.style.display = 'none';
 	 	this.activePhrase = new Phrase(this.getRandomPhrase().phrase);
-	 	this.activePhrase.addPhraseToDisplay();
-	 	
-	 }
+	 	this.activePhrase.addPhraseToDisplay(); 	
+	}
 
+	/**
+	 * Checks for winning move
+	 * @return {boolean} True if game has been won, false if game wasn't won 
+	 */
+	checkForWin() {
+		const displayLetters = document.querySelectorAll('#phrase ul li');
+		const showing = [];
+		const hidden = [];
+		for( let i = 0; i < displayLetters.length; i++ ) {
+			if (displayLetters[i].className.startsWith('hide')) {
+				hidden.push(displayLetters[i]);
+			} else {
+				showing.push(displayLetters[i]);
+			}
+		}
+
+		if ( hidden.length === 0 ) {
+			console.log(hidden.length);
+			console.log(showing.length);
+			return true;
+		} else {
+			console.log(hidden.length);
+			console.log(showing.length);
+			return false;
+		}
+	}
+
+	/**
+	 * Increases the value of the missed property
+	 * Removes a life from the scoreboard
+	 * Checks if a player has remaining lives and ends the game if player is out
+	 */
+	removeLife() {
+		let hearts = document.querySelectorAll('li.tries img');
+		let heartsCounter = 0;
+		
+		for ( let i = 0; i < hearts.length; i++ ) {
+			hearts[this.missed].src = 'images/lostHeart.png';
+			this.missed += 1;
+			break;
+		}
+
+		if (this.missed === 5) {
+			this.gameOver(false);
+		}
+	}
+
+	/**
+	 * Displays game over message
+	 * @param {boolean} gameWon - Whether the user won the game
+	 */
+	gameOver() {
+		if (this.checkForWin() === true) {
+			const overlay = document.querySelector('#overlay');
+			overlay.className = 'win';
+	 		overlay.style.display = 'block';
+		} else {
+			const overlay = document.querySelector('#overlay');
+			overlay.className = 'lose';
+		 	overlay.style.display = 'block';
+	 	}
+	}
 }
