@@ -1,2 +1,3 @@
-# oop_game-v2
- Object-Oriented JS Game
+Phrase Hunter is an OOJ game that allows players to use an onscreen keyboard to guess letters in the phrase. If the letter is correct, all instances of it are shown on the board. If the guess is incorrect, a life is removed. If the player guesses all letters in the phrase they win. If they guess incorrectly five times before revealing the whole phrase then they lose.
+
+I completed the extra credit requirements by adding different colors to the letters on the keyboard (green if correct, red if incorrect) and changing the background color (eggshell) and adding a black instead of transparent border to the onscreen keyboard keys. I also added an event listener to make the user's actual keyboard work in the same way that the oncsreen one does.
