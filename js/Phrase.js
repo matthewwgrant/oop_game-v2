@@ -10,6 +10,7 @@ class Phrase {
 		const ul = document.querySelector('#phrase ul');
 		const getPhrase = this.phrase;
 		const letters = getPhrase.split('');
+		const heart = document.querySelectorAll('.tries img');
 
 		for ( let i = 0; i < letters.length; i++ ) {
 			const regex = /^[a-z]/;

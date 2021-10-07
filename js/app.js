@@ -1,6 +1,7 @@
 // variables
 let game;
 let guess;
+let button;
 const startButton = document.querySelector('#btn__reset');
 const keyboard = document.querySelector('#qwerty');
 
@@ -14,6 +15,8 @@ startButton.addEventListener('click', () => {
 // event listener to capture keystroke value
 keyboard.addEventListener('click', (e) => {
 	if (e.target && e.target.type === 'submit') {
+		button = e.target;
+		button.disabled = true;
 		guess = e.target.textContent;
 		game.handleInteraction();
 	}
