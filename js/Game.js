@@ -11,12 +11,13 @@ class Game {
 	 */
 	createPhrase() {
 		const phraseArr = [
-			{phrase: 'they cannot stop you from ordering a steak and a glass of water'},
-			{phrase: 'mo salah running down the wing'},
-			{phrase: 'better safe than sorry'},
-			{phrase: 'hot dog we have a weiner'},
-			{phrase: 'a fifth phrase that is not clever'}
+			{phrase: new Phrase('they cannot stop you from ordering a steak and a glass of water')},
+			{phrase: new Phrase('mo salah running down the wing')},
+			{phrase: new Phrase('better safe than sorry')},
+			{phrase: new Phrase('hot dog we have a weiner')},
+			{phrase: new Phrase('a fifth phrase that is not clever')}
 		];
+
 
 		return phraseArr;
 	}
@@ -37,7 +38,7 @@ class Game {
 	startGame() {
 	 	const overlay = document.querySelector('#overlay');
 	 	overlay.style.display = 'none';
-	 	this.activePhrase = new Phrase(this.getRandomPhrase().phrase);
+	 	this.activePhrase = this.getRandomPhrase().phrase;
 	 	this.activePhrase.addPhraseToDisplay(); 	
 	}
 
