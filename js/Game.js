@@ -124,7 +124,7 @@ class Game {
 	 	}
 
 	 	for ( let i = 0; i < li.length; i++ ) {
-	 		li[i].style.display = 'none';
+	 		li[i].remove();
 
 	 	}
 

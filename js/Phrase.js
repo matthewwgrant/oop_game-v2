@@ -45,7 +45,7 @@ class Phrase {
 		const showLetter = document.querySelectorAll('#phrase ul li');
 		for ( let i = 0; i < showLetter.length; i++ ) {
 			if ( showLetter[i].textContent === letter ) {
-				showLetter[i].className = `show letter ${showLetter[i]}`
+				showLetter[i].className = `show letter ${letter}`;
 			}
 		}
 	}
