@@ -29,12 +29,14 @@ document.addEventListener('keyup', (e) => {
 	for ( let i = 0; i < onScreenKeys.length; i++ ) {
 		if ( key  === onScreenKeys[i].textContent ) {
 			button = onScreenKeys[i];
-			button.disabled = true;
-			guess = key;
-			game.handleInteraction();
+			if ( button.disabled === true) {
+				
+			} else {
+				button.disabled = true;
+				guess = key;
+				game.handleInteraction();
+			}
 		}
-	}
-	
-		
+	}	
 });
 

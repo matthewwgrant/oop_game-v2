@@ -130,7 +130,7 @@ class Game {
 
 	 	for (let i = 0; i < buttons.length; i++ ) {
 	 		if ( buttons[i].className === 'chosen' || buttons[i].className === 'wrong' ) {
-	 			buttons[i].className = '.key';
+	 			buttons[i].className = 'key';
 	 			buttons[i].disabled = false;
 
 	 		}
