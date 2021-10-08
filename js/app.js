@@ -22,3 +22,19 @@ keyboard.addEventListener('click', (e) => {
 	}
 });
 
+document.addEventListener('keyup', (e) => {
+	const key = e.code.split('y').pop().toLowerCase();
+	const onScreenKeys = document.querySelectorAll('.keyrow button');
+
+	for ( let i = 0; i < onScreenKeys.length; i++ ) {
+		if ( key  === onScreenKeys[i].textContent ) {
+			button = onScreenKeys[i];
+			button.disabled = true;
+			guess = key;
+			game.handleInteraction();
+		}
+	}
+	
+		
+});
+
